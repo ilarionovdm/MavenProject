@@ -1,0 +1,56 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-Black.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-BlackItalic.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-Bold.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-BoldItalic.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-Italic.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-Light.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-LightItalic.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-Medium.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-MediumItalic.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-Regular.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-Thin.ttf">
+    <link type="text/css" rel="stylesheet" href="fonts/Roboto-ThinItalic.ttf"> -->
+
+    <link type="text/css" rel="stylesheet" href="css/roboto-fonts.css" />
+    <link type="text/css" rel="stylesheet" href="css/general.css" />
+    <link type="text/css" rel="stylesheet" href="css/header.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <title>Вход</title>
+    <link type="text/css" rel="stylesheet" href="css/login.css" />
+
+    <script src="js/ext/jquery-2.2.3.min.js"></script>
+    <script src="js/login.js"></script>
+</head>
+<body>
+    <table id="login">
+        <tbody><tr>
+            <td>
+                <div id="auth">
+                    <div id="title" class="no-select">MatrixBoard</div>
+                    <form id="auth-data" method="POST" action="j_security_check">
+                        <div id="login-failed">Неправильный логин или пароль.</div>
+                        <div id="login-error">Не удалось осуществить вход.</div>
+                        <div>
+                            <div class="label">Логин:</div>
+                            <input type="text" id="login-username" name="j_username" />
+                        </div>
+                        <div>
+                            <div class="label">Пароль:</div>
+                            <input type="password" id="login-password" name="j_password" />
+                        </div>
+                        <div>
+                            <input id="login-button" type="button" value="Вход" onclick="login()" />
+                        </div>
+                    </form>
+                    <div id="copyright">
+                        Performance Lab © 2016
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody></table>
+
+</body></html>
