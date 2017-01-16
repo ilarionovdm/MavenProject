@@ -15,7 +15,7 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.page;
 import static com.codeborne.selenide.Selenide.screenshot;
 
-public class MainPage {
+public class MainPage extends ParentPage{
 
     @FindBy(id = "add-person")
     private SelenideElement addPerson;
@@ -30,6 +30,7 @@ public class MainPage {
     }
 
     public MainPage clickAddPerson(Map<String, Object> context){
+        log.info("Клик по кнопку \' Добавить человека \' ");
         addPerson.click();
         screenshot("addPerson");
         person = page(AddPerson.class).fillRandom();
@@ -38,9 +39,11 @@ public class MainPage {
     }
 
     public void checkContainsUser(Map<String, Object> context) {
+        log.info("выполняется поиск по страницам");
         Person person = (Person) context.get("person");
         int pageCount = pages.size()/2;
         for (int i = 0; i < pageCount; i++){
+            log.info("Поиск по странице " + (i+1));
             PageNavigator.clickPage(pages, i);
             PersonsList personsList;
             List<Person> persons;
@@ -50,10 +53,12 @@ public class MainPage {
             }while(persons.size() < 1);
             for (int j = 0; j < persons.size(); j++) {
                 if (person.equals(persons.get(j))) {
+                    log.info("Человек найден");
                     return;
                 }
             }
         }
+        log.error("Пользователь не найден");
         throw new RuntimeException("Не удалось найти пользователя");
     }
 
